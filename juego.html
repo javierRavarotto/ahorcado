@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/juego.css">
+</head>
+
+<body onload="mostrarPalabra()">
+    <div id="resultado" style="display:none ;">
+        <button class="cruz" onclick="cerrar()" id="cruz"><b>X</b> </button>
+        <p class="resultado">ganaste</p>
+    </div>
+    <div  style="" id="conteiner">
+        <a href="index.html"> <button  class="botonVolver">volver</button></a>
+        <div class="horca"> 
+           
+            <div class="piso">
+                <div class="mastil">
+                    <div class="palito">
+                        <div class="cuerpo">
+                            <div class="cabeza" style="display:none ;" id="cabeza" ><div class=" soga" id="soga" style="display:none ;"></div> </div>
+                            <div class="torzo" style="display:none ;" id="torzo"> </div>
+                            <div class="brasoIzq"  style="display:none ;" id="brasoIzq"> </div>
+                            <div class="brasoDer" style="display:none ;" id="brasoDer"> </div>
+                            <div class="piernaIzq" style="display:none ;" id="piernaIzq"> </div>
+                            <div class="piernaDer" style="display:none ;" id="piernaDer"> </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+            <div  class="palabra">
+                <div id="palabra" class="contenedorPalabra"></div>
+            </div>
+            <div class="tecladoContenedor" id="teclado" ></div>
+            <div id="mensaje" class="mensaje"></div>
+    </div>
+    <script src="./js/juego.js"></script>
+</body>
+
+</html>
