@@ -20,6 +20,7 @@ let contadorCorrecto = 0
 let ahorcado = 0
 
 function generarPalabra() {
+    guardarLocalStorague()
     obtenerLocalStorague()
     let palabra = ""
     generarTeclado()
