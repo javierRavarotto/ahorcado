@@ -56,7 +56,7 @@ function mostrarPalabra() {
     palabra = generarPalabra()
     for (let i = 0; i < palabra.length; i++) {
         this.palabraArreglo.push(palabra[i])
-        let p = document.createElement("p");
+        let p = document.createElement("div");
         let div = document.createElement("div");
         div.className = "linea"
         p.textContent = palabra[i]
