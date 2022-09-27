@@ -14,18 +14,23 @@ const piernaDer = document.getElementById("piernaDer");
 
 let errores = []
 var palabraArreglo = []
-var palabras = ["elefante", "perro", "gato", "tucan"]
+var palabras = ["messi","ronaldo"]
+var agregadas=[]
 let teclado = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ", "z", "x", "c", "v", "b", "n", "m"]
 let contadorCorrecto = 0
 let ahorcado = 0
 
 function generarPalabra() {
-    guardarLocalStorague()
-    obtenerLocalStorague()
     let palabra = ""
-    generarTeclado()
-    palabra = palabras[Math.floor(Math.random() * (palabras.length))]
-    return palabra
+    if (obtenerLocalStorague()==undefined) {
+        guardarLocalStorague()
+    }else{
+        palabras=obtenerLocalStorague()
+    }
+        generarTeclado()
+        palabra = palabras[Math.floor(Math.random() * (palabras.length))]
+        return palabra
+    
 }
 function generarTeclado() {
     for (let i = 0; i < teclado.length; i++) {
@@ -52,8 +57,8 @@ function generarTeclado() {
 }
 
 function mostrarPalabra() {
+    
     let palabra = ""
-    console.log(palabra)
     palabra = generarPalabra()
     for (let i = 0; i < palabra.length; i++) {
         this.palabraArreglo.push(palabra[i])
@@ -185,15 +190,31 @@ function vidas(intentos) {
 }
 
 function agregarPalabra(palabra){
-    palabras.push(palabra)
-    guardarLocalStorague()
-    console.log(palabras)
+      
+        if (obtenerLocalStorague()!=undefined) {
+            palabras=obtenerLocalStorague()
+        }
+        if (palabra!="") {
+            palabras.push(palabra)
+            guardarLocalStorague()
+        }
+        
+        
+        
+        
+ 
 }
-
 function guardarLocalStorague(){
+ 
     localStorage.setItem("palabras", JSON.stringify(palabras))
+   
 }
 function obtenerLocalStorague(){
-   palabras= localStorage.getItem("palabras")
-   palabras= JSON.parse(palabras)
+    if (localStorage.getItem("palabras")===null) {
+    }else{
+        palabras= localStorage.getItem("palabras")
+        palabras= JSON.parse(palabras)
+        return palabras
+    }
 }
+
